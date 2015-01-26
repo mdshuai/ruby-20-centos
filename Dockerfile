@@ -10,7 +10,7 @@ FROM centos:centos7
 
 # Pull in important updates and then install ruby193
 RUN yum install -y --enablerepo=centosplus epel-release \
-    gettext which ruby ruby-devel \
+    gettext which tar ruby ruby-devel \
     rubygem-bundler rubygem-rake \
     gcc-c++ automake make autoconf curl-devel openssl-devel \
     zlib-devel libxslt-devel libxml2-devel \
