@@ -6,11 +6,13 @@
 # If you want to use Bundler with C-extensioned gems or MySQL/PostGresql, you
 # can use 'centos-ruby-extended' image instead.
 
+# This image have removed the tar package, just for sti test.
+
 FROM centos:centos7
 
 # Pull in important updates and then install ruby193
 RUN yum install -y --enablerepo=centosplus epel-release \
-    gettext which tar ruby ruby-devel \
+    gettext which ruby ruby-devel \
     rubygem-bundler rubygem-rake \
     gcc-c++ automake make autoconf curl-devel openssl-devel \
     zlib-devel libxslt-devel libxml2-devel \
