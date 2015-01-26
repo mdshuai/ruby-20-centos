@@ -31,10 +31,11 @@ ENV STI_LOCATION /tmp
 
 # Create 'ruby' account we will use to run Ruby application
 # Add support for '#!/usr/bin/ruby' shebang.
-RUN mkdir -p /opt/ruby/{gems,run,src} && \
-    groupadd -r ruby -f -g 433 && \
-    useradd -u 431 -r -g ruby -d /opt/ruby -s /sbin/nologin -c "Ruby user" ruby && \
-    chown -R ruby:ruby /opt/ruby
+RUN mkdir -p /opt/ruby/{gems,run,src} 
+#    && \
+#    groupadd -r ruby -f -g 433 && \
+#    useradd -u 431 -r -g ruby -d /opt/ruby -s /sbin/nologin -c "Ruby user" ruby && \
+#    chown -R ruby:ruby /opt/ruby
 
 # Set the 'root' directory where this build will search for Gemfile and
 # config.ru.
@@ -49,7 +50,7 @@ ENV HOME     /opt/ruby
 ENV PATH     $HOME/bin:$PATH
 
 WORKDIR     /opt/ruby/src
-USER        ruby
+#USER        ruby
 
 EXPOSE 9292
 
